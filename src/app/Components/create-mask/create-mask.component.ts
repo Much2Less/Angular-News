@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { OverlayService } from "../../Services/overlay.service";
+import {Component, OnInit} from '@angular/core';
+import {DatePipe} from "@angular/common";
+import {Newspaper} from "../../Interfaces/newspaper";
 
 @Component({
   selector: 'app-create-mask',
@@ -8,18 +9,28 @@ import { OverlayService } from "../../Services/overlay.service";
 })
 export class CreateMaskComponent implements OnInit {
 
-  private _visible=false;
+  timeChecked = true;
 
-  constructor() { }
+  title: any;
+  content: any;
+
+
+  constructor(
+    public datePipe: DatePipe,
+) {}
 
   ngOnInit(): void {
   }
 
-  get visible(): boolean {
-    return this._visible;
-  }
+  submit()  {
 
-  set visible(value: boolean) {
-    this._visible = value;
+    let currentDateTime = this.datePipe.transform((new Date), `MM/dd/yyyy h:mm:ss`)
+    let newspaper:Newspaper = {
+      title:this.title,
+      content:this.content,
+      date:currentDateTime,
+      active:true
+    }
+
   }
 }

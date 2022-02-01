@@ -1,34 +1,31 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { OverlayModule} from "@angular/cdk/overlay";
+import {FormsModule} from "@angular/forms";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { DashboardComponent } from './Components/dashboard/dashboard.component';
-import { CreateButtonComponent } from './Components/create-button/create-button.component';
-import { EditButtonComponent } from './Components/edit-button/edit-button.component';
 import { EditMaskComponent } from './Components/edit-mask/edit-mask.component';
-import { DeleteButtonComponent } from './Components/delete-button/delete-button.component';
 import { CreateMaskComponent } from './Components/create-mask/create-mask.component';
+import {DatePipe} from "@angular/common";
+import { NewslistComponent } from './Components/newslist/newslist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
-    CreateButtonComponent,
-    EditButtonComponent,
     EditMaskComponent,
-    DeleteButtonComponent,
-    CreateMaskComponent
+    CreateMaskComponent,
+    NewslistComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    OverlayModule
+    OverlayModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

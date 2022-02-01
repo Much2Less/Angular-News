@@ -1,8 +1,16 @@
-<div class="container-xl" (show)="visible">
-  <h1>
-    Title
-    <input type="text">
-  </h1>
-  <p>Inhalt</p>
-  <input type="text">
+<div class="container-sm" #tpl>
+  <label class="form-label">Title</label>
+  <input [(ngModel)]="title" type="text" class="form-control">
+
+  <label class="form-label">Content</label>
+  <textarea class="form-control" rows="16"></textarea>
+
+  <div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" [checked]="timeChecked">
+    <label class="form-check-label">Use current Time</label>
+  </div>
+
+  <br>
+
+  <button class="btn-primary" (click)="submit()">Submit</button>
 </div>
