@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
-import {CreateMaskComponent} from "./Components/create-mask/create-mask.component";
-import {Newspaper} from "./Interfaces/newspaper";
+import { Component, OnInit } from '@angular/core';
 import {MdbModalRef, MdbModalService} from "mdb-angular-ui-kit/modal";
+import {CreateMaskComponent} from "../create-mask/create-mask.component";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-body',
+  templateUrl: './body.component.html',
+  styleUrls: ['./body.component.css']
 })
-export class AppComponent {
+export class BodyComponent implements OnInit {
+
   title = 'Angular-News';
   isOpen = false;
   modalRef: MdbModalRef<CreateMaskComponent> | null = null;
@@ -17,6 +17,9 @@ export class AppComponent {
   constructor(
     private modalService: MdbModalService
   ) {}
+
+  ngOnInit() {
+  }
 
   openModalCreate() {
     this.modalRef = this.modalService.open(CreateMaskComponent, {

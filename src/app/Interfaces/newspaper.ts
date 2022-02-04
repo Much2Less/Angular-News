@@ -1,6 +1,7 @@
 export interface Newspaper {
-  title: string;
-  content: string;
+  id?: number;
+  title: string | null;
+  content: string | null;
   date:string | null;
   active: boolean;
 }

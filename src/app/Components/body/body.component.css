@@ -1,0 +1,15 @@
+#siteTitle {
+  text-align: center;
+  font-size: xxx-large;
+
+  font-family: "Te X Gyre Schola";
+}
+
+#new {
+  background-color: green;
+  align-content: center;
+}
+
+#center {
+  position: center;
+}

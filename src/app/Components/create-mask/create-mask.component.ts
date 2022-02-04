@@ -1,6 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {DatePipe} from "@angular/common";
 import {Newspaper} from "../../Interfaces/newspaper";
+import {MdbModalRef} from "mdb-angular-ui-kit/modal";
+import {NewsService} from "../../Services/news.service";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-create-mask',
@@ -9,28 +12,37 @@ import {Newspaper} from "../../Interfaces/newspaper";
 })
 export class CreateMaskComponent implements OnInit {
 
-  timeChecked = true;
+  @Output() onAddNews: EventEmitter<Newspaper> = new EventEmitter();
 
-  title: any;
-  content: any;
+  timeChecked = true;
+  title: string = '';
+  content: string = '';
+
 
 
   constructor(
     public datePipe: DatePipe,
+    public modalRef: MdbModalRef<CreateMaskComponent>,
+    private newsService: NewsService,
 ) {}
 
   ngOnInit(): void {
   }
 
-  submit()  {
+  onSubmit() {
 
     let currentDateTime = this.datePipe.transform((new Date), `MM/dd/yyyy h:mm:ss`)
-    let newspaper:Newspaper = {
+    let newNewspaper:Newspaper = {
       title:this.title,
       content:this.content,
       date:currentDateTime,
       active:true
     }
+
+    this.modalRef.close()
+    this.newsService.addNewspaper(newNewspaper).subscribe((newNewspaper) => this.newsService.newsList.push(newNewspaper))
+
+    //this.onAddNews.emit(newNewspaper);
 
   }
 }

@@ -1,0 +1,39 @@
+{
+  "news": [
+    {
+      "title": "Test",
+      "content": "lelelelele",
+      "date": "02/03/2022 4:24:26",
+      "active": true,
+      "id": 1
+    },
+    {
+      "title": "Lorem",
+      "content": "Lorem ipsum dolor sit a",
+      "date": "02/03/2022 5:22:45",
+      "active": true,
+      "id": 2
+    },
+    {
+      "title": "terwrewfy",
+      "content": "asdadwasawd",
+      "date": "02/03/2022 10:42:18",
+      "active": true,
+      "id": 3
+    },
+    {
+      "title": "ore",
+      "content": "adadwasdadwasd",
+      "date": "02/04/2022 12:55:07",
+      "active": true,
+      "id": 4
+    },
+    {
+      "title": "wwwww",
+      "content": "wwwww",
+      "date": "02/04/2022 12:56:00",
+      "active": true,
+      "id": 5
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+<div class="container-sm border">
+  <h1 id="siteTitle">Angular-News</h1>
+  <br>
+  <div id="center">
+    <button  mat-fab class="btn-primary" id="new"
+             (click)="openModalCreate()"
+             cdkOverlayOrigin
+             #trigger="cdkOverlayOrigin">
+      <i class="fas fa-plus"></i>
+    </button>
+  </div>
+  <br>
+
+  <router-outlet></router-outlet>
+</div>
+
+
+<ng-template cdkConnectedOverlay
+             [cdkConnectedOverlayOrigin]="trigger"
+             [cdkConnectedOverlayOpen]="isOpen">
+
+  <app-create-mask (onAddNews)="addNews($event)"></app-create-mask>
+
+</ng-template>
+

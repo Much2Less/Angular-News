@@ -1,0 +1,45 @@
+<!--
+<div class="card" style="width: 18rem;">
+  <div class="card-body" >
+    <h5 class="card-title">{{news.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{news.date}}</h6>
+    <p class="card-text" >{{news.content}}</p>
+    <a [routerLink]="['news-page/:id' ]" class="card-link" (click)="setArticle(news)">News link</a>
+  </div>
+  <div class="btn-group">
+    <input type="button" class="btn" id="edit" value="Edit"
+           (click)="openModalEdit(news)"
+           cdkOverlayOrigin
+           #trigger="cdkOverlayOrigin">
+    <input type="button" class="btn" id="delete" value="Delete"
+    (click)="openModalDelete(news)"
+    cdkOverlayOrigin
+    #trigger="cdkOverlayOrigin">
+  </div>
+</div>
+-->
+
+<div class="row row-cols-2 row-cols-md-2 g-4" id="item-box">
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title" id="title">{{news.title}}</h4>
+        <p class="card-subtitle" id="date">{{news.date}}</p>
+        <p class="card-text" id="content">{{news.content}}</p>
+        <a routerLink="/news-page" class="card-link" (click)="setArticle(news)">News link</a>
+      </div>
+      <div class="btn-group">
+        <input type="button" class="btn" id="edit" value="Edit"
+               (click)="openModalEdit(news)"
+               cdkOverlayOrigin
+               #trigger="cdkOverlayOrigin">
+        <input type="button" class="btn" id="delete" value="Delete"
+               (click)="openModalDelete(news)"
+               cdkOverlayOrigin
+               #trigger="cdkOverlayOrigin">
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

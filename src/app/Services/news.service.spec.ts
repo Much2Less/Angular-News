@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { OverlayService } from './overlay.service';
+import { NewsService } from './news.service';
 
-describe('OverlayService', () => {
-  let service: OverlayService;
+describe('NewsmanagementService', () => {
+  let service: NewsService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(OverlayService);
+    service = TestBed.inject(NewsService);
   });
 
   it('should be created', () => {

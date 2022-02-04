@@ -1,16 +1,21 @@
-<div class="container-sm" #tpl>
-  <label class="form-label">Title</label>
-  <input [(ngModel)]="title" type="text" class="form-control">
+<form class="modal-content" (ngSubmit)="onSubmit()">
+  <div class="form-control">
+    <div class="modal-header">
+      <h5 class="modal-title">Create a new Newspaper</h5>
+    </div>
+    <div class="modal-body">
+      <label class="form-label">Title</label>
+      <input type="text" class="form-control" [(ngModel)]='title' name="title"/>
 
-  <label class="form-label">Content</label>
-  <textarea class="form-control" rows="16"></textarea>
+      <label class="form-label">Content</label>
+      <textarea class="form-control" rows="16" [(ngModel)]="content" name="content"></textarea>
 
-  <div class="form-check form-switch">
-    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" [checked]="timeChecked">
-    <label class="form-check-label">Use current Time</label>
+    </div>
+    <div class="modal-footer">
+      <input type="submit" class="btn btn-primary" value="Create">
+      <input type="button" class="btn btn-secondary" value="Cancel" (click)="modalRef.close()">
+    </div>
   </div>
+</form>
 
-  <br>
 
-  <button class="btn-primary" (click)="submit()">Submit</button>
-</div>
